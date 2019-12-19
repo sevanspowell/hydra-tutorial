@@ -8,7 +8,7 @@ rec {
   pkgs_x86_64_linux = pkgsFor "i686-linux";
 
   # Simply assign a derivation to an attribute to have it built.
-  hello_world_1 = pkgs_x86_64_linux.hello;
+  hello_world_x = pkgs_x86_64_linux.hello;
 
   # 'hydraJob' strips all non-essential attributes.
   # hello_world_2 = pkgs.lib.hydraJob pkgs_x86_64_linux.hello;
@@ -19,6 +19,6 @@ rec {
 } // mapTestOn {
 
   # Fancy shortcut to generate one attribute per supported platform.
-  hello = supportedSystems;
+  # hello = supportedSystems;
 
 }
