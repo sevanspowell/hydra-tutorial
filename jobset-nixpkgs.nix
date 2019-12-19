@@ -5,10 +5,8 @@
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
 rec {
-  # pkgs_x86_64_linux = pkgsFor "i686-linux";
-
   # Simply assign a derivation to an attribute to have it built.
-  hello_world_x = pkgs.hello;
+  hello_world_x = (pkgsFor "i686-linux").hello;
 
   # 'hydraJob' strips all non-essential attributes.
   # hello_world_2 = pkgs.lib.hydraJob pkgs_x86_64_linux.hello;
