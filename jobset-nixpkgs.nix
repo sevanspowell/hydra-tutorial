@@ -4,7 +4,7 @@
 
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
-{
+rec {
   pkgs_x86_64_linux = pkgsFor "x86_64_linux";
 
   # Simply assign a derivation to an attribute to have it built.
